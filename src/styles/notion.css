@@ -1,0 +1,130 @@
+.notion-content, .notion-content p { line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
+.theory-page .lesson, .theory-page .topic-list { min-width: 0; overflow-wrap: anywhere; }
+.notion-content img, .notion-cover { display: block; max-width: 100%; height: auto; }
+.notion-content figure { margin: 20px 0; }
+.notion-content figcaption { color: var(--muted); font-size: .85rem; }
+.notion-content pre, .notion-table { max-width: 100%; overflow: auto; white-space: pre; }
+.notion-content table { border-collapse: collapse; white-space: pre-wrap; }
+.notion-content td, .notion-content th { border: 1px solid var(--border); padding: 8px 12px; min-width: 100px; }
+.notion-content a { text-decoration: underline; }
+.notion-content { margin-bottom: 22px; }
+
+/* Clipping decorations must not create a scroll container around the sticky index. */
+.library:has(.theory-page) { overflow: clip; }
+.library:has(.theory-page) > main { max-width: 1320px; }
+.content-page.theory-page { max-width: 1320px; margin-inline: auto; }
+.theory-page .reading-layout {
+  display: grid;
+  grid-template-columns: 208px minmax(0, 1fr) 208px;
+  grid-template-areas: "library reader outline";
+  align-items: start;
+  gap: 20px;
+}
+.theory-page .panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.theory-page .toolbar { gap: 20px; margin-bottom: 20px; }
+.theory-page .topic-list { grid-area: library; max-height: none; overflow: visible; }
+.theory-page .lesson { grid-area: reader; }
+.theory-page .topic-list-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: .9rem;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.theory-page .topic-list button { padding: 12px 10px; line-height: 1.5; gap: 8px; }
+.theory-page .topic-list button svg { flex-shrink: 0; }
+.theory-page .mobile-library { display: none; }
+.theory-page .document-heading {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.theory-page .document-title { margin: 0 0 12px; font-size: clamp(1.35rem, 1.9vw, 1.8rem); line-height: 1.3; }
+.theory-page .cover-link, .theory-page .document-book {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 84px;
+  border-radius: 12px;
+  background: var(--cream);
+}
+.theory-page .notion-cover { width: auto; height: auto; max-width: 96px; max-height: 84px; object-fit: cover; border-radius: 12px; }
+.theory-page .document-book { color: var(--purple); }
+.theory-page .lesson-meta { justify-content: flex-start; flex-wrap: wrap; gap: 8px 12px; font-size: .75rem; }
+.theory-page .notion-content { max-width: 70ch; margin-inline: auto; font-size: 1rem; }
+.theory-page .notion-content :is(h2, h3, h4) { scroll-margin-top: 100px; }
+.theory-page .notion-content :is(h2, h3, h4):focus-visible { outline: 2px solid var(--purple); outline-offset: 6px; border-radius: 4px; }
+.theory-page .notion-content h2 { font-size: 1.4rem; margin: 30px 0 14px; }
+.theory-page .notion-content h3 { font-size: 1.15rem; margin: 26px 0 12px; }
+.theory-page .notion-content h4 { font-size: 1rem; margin: 22px 0 10px; }
+.theory-page .notion-content > :first-child { margin-top: 0; }
+.theory-page .document-outline { grid-area: outline; min-width: 0; position: sticky; top: 24px; }
+.theory-page .document-outline summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: .9rem;
+  font-weight: 800;
+  line-height: 1.25;
+  cursor: pointer;
+  list-style: none;
+}
+.theory-page .document-outline summary::-webkit-details-marker { display: none; }
+.theory-page .document-outline summary > svg { flex-shrink: 0; }
+.theory-page .outline-chevron { margin-left: auto; transition: transform .2s; }
+.theory-page details[open] > summary .outline-chevron { transform: rotate(180deg); }
+.theory-page .outline-body { margin-top: 20px; }
+.theory-page .outline-search { display: flex; align-items: center; gap: 6px; padding-inline: 8px; min-width: 0; }
+.theory-page .outline-search input { font-size: .78rem; min-width: 0; padding-block: 9px; }
+.theory-page .outline-search svg { flex-shrink: 0; }
+.theory-page .outline-links { display: grid; gap: 4px; max-height: calc(100dvh - 205px); overflow-y: auto; margin-top: 14px; }
+.theory-page .outline-links button {
+  padding: 8px 9px;
+  background: transparent;
+  border-left: 2px solid var(--border);
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  font-size: .8rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.theory-page .outline-links button:hover { background: #faf2fc; }
+.theory-page .outline-links button[aria-current] { background: #f3e8f8; border-color: var(--purple); color: var(--purple); font-weight: 800; }
+.theory-page .outline-links .outline-level-2 { padding-left: 19px; }
+.theory-page .outline-links .outline-level-3 { padding-left: 29px; }
+.theory-page .outline-links p { margin: 0; font-size: .8rem; }
+
+@media (max-width: 1179px) {
+  .theory-page .reading-layout { grid-template-columns: 208px minmax(0, 1fr); grid-template-areas: "library outline" "library reader"; }
+  .theory-page .document-outline { position: static; }
+  .theory-page .outline-links { max-height: 280px; }
+}
+@media (max-width: 759px) {
+  .theory-page .reading-layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "library" "outline" "reader"; gap: 16px; }
+  .theory-page .panel { padding: 18px; border-radius: 18px; }
+  .content-page.theory-page .toolbar { grid-template-columns: minmax(0, 1fr) auto; gap: 12px; margin-bottom: 16px; }
+  .theory-page .toolbar > label:not(.search-input) { gap: 6px; }
+  .theory-page .toolbar > .muted { grid-column: 2; grid-row: 2; align-self: center; }
+  .theory-page .topic-list-title { margin-bottom: 12px; }
+  .theory-page .mobile-library { display: grid; gap: 7px; font-size: .8rem; }
+  .theory-page .mobile-library select { width: 100%; }
+  .theory-page .library-documents { display: none; }
+  .theory-page .document-heading { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; padding-bottom: 18px; margin-bottom: 20px; }
+  .theory-page .cover-link, .theory-page .document-book { width: 64px; height: 64px; }
+  .theory-page .notion-cover { max-width: 64px; max-height: 64px; }
+  .theory-page .document-title { font-size: 1.35rem; margin-bottom: 10px; }
+  .theory-page .notion-content { line-height: 1.8; }
+}

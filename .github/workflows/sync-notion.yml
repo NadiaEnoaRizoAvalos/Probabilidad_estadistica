@@ -1,0 +1,52 @@
+name: Sincronizar teoría de Notion
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: notion-theory
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: ${{ vars.NOTION_THEORY_SOURCE_ID != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check:sync
+      - name: Sincronizar solamente la fuente autorizada
+        id: notion-sync
+        run: npm run sync:notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_THEORY_SOURCE_ID: ${{ vars.NOTION_THEORY_SOURCE_ID }}
+      - run: npm run validate:theory
+      - run: npm run validate:exams
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build
+      - name: Instalar navegador de pruebas
+        run: npx playwright install --with-deps chrome
+      - run: npx playwright test
+      - name: Publicar solamente los datos e imágenes sincronizados
+        shell: bash
+        run: |
+          git add -- public/notion-theory.json
+          if [ -d public/notion-images ]; then
+            git add -- public/notion-images
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(teoria): sincronizar resúmenes publicados de Notion'
+          git push

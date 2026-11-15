@@ -1,0 +1,14 @@
+@import './library.css';
+@import './content.css';
+@import './responsive.css';
+@import './activities.css';
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,6 +1,6 @@
 import { defineConfig } from "@playwright/test";
 
-const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Probabilidad_Estadistica";
+const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Probabilidad_estadistica";
 const baseURL = `http://127.0.0.1:4173/${repository}/`;
 
 export default defineConfig({

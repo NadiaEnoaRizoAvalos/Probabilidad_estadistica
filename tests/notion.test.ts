@@ -4,8 +4,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import type { Client } from "@notionhq/client";
-import { checkConfiguration, collectTheory, diagnoseSyncError, downloadImage, syncTheory } from "../scripts/sync-notion";
+import { Client } from "@notionhq/client";
+import { checkConfiguration, collectTheory, diagnoseSyncError, downloadImage, notionVersion, syncTheory } from "../scripts/sync-notion";
 import { blockText, validateTheory } from "../src/types/theory";
 import { parseStudyState } from "../src/hooks/studyStorage";
 
@@ -63,10 +63,45 @@ describe("Sincronización de Notion", () => {
   });
   it("resuelve una base con una única data source", async () => {
     const m = mock();
+    const databaseId = "33333333-3333-3333-3333-333333333333";
     m.dataSources.retrieve.mockRejectedValueOnce({ code: "object_not_found" });
     m.databases.retrieve.mockResolvedValue({ data_sources: [{ id: sourceId }] });
-    await collectTheory(client(m), sourceId);
-    expect(m.databases.retrieve).toHaveBeenCalled();
+    await collectTheory(client(m), databaseId);
+    expect(m.dataSources.retrieve.mock.calls.map(([args]) => args.data_source_id)).toEqual([databaseId, sourceId]);
+    expect(m.databases.retrieve).toHaveBeenCalledWith({ database_id: databaseId });
+    expect(m.dataSources.query).toHaveBeenCalledWith(expect.objectContaining({ data_source_id: sourceId }));
+  });
+  it.each([false, true])("usa el SDK real con endpoints de lectura y versión explícita (base contenedora: %s)", async fromDatabase => {
+    const databaseId = "33333333-3333-3333-3333-333333333333";
+    const schema = await mock().dataSources.retrieve();
+    const published = page("PuBlIcAdO"), draft = page("Borrador", "status", "44444444-4444-4444-4444-444444444444");
+    const originalPages = structuredClone([published, draft]);
+    schema.properties.Estado.status.options[0].name = "PuBlIcAdO";
+    const requests: { method: string; path: string; version: string | null; body?: unknown }[] = [];
+    const fetcher: typeof fetch = async (input, init) => {
+      const request = new Request(input, init), path = new URL(request.url).pathname;
+      const body = request.method === "POST" ? await request.json() : undefined;
+      requests.push({ method: request.method, path, version: request.headers.get("Notion-Version"), body });
+      if (path === `/v1/data_sources/${databaseId}`)
+        return Response.json({ object: "error", status: 404, code: "object_not_found", message: "Fixture" }, { status: 404 });
+      if (path === `/v1/databases/${databaseId}`) return Response.json({ data_sources: [{ id: sourceId }] });
+      if (path === `/v1/data_sources/${sourceId}`) return Response.json(schema);
+      if (path === `/v1/data_sources/${sourceId}/query`) return Response.json(batch([published, draft]));
+      if (path === `/v1/blocks/${pageId}/children`) return Response.json(batch([]));
+      throw new Error("El script intentó un endpoint no autorizado por la prueba");
+    };
+    const notion = new Client({ auth: "synthetic-test-token", notionVersion, fetch: fetcher, logger: () => {} });
+    const { data } = await collectTheory(notion, fromDatabase ? databaseId : sourceId);
+    expect(data.documents).toHaveLength(1);
+    expect(requests.map(({ method, path }) => `${method} ${path}`)).toEqual([
+      ...(fromDatabase ? [`GET /v1/data_sources/${databaseId}`, `GET /v1/databases/${databaseId}`] : []),
+      `GET /v1/data_sources/${sourceId}`,
+      `POST /v1/data_sources/${sourceId}/query`,
+      `GET /v1/blocks/${pageId}/children`,
+    ]);
+    expect(requests.every(request => request.version === "2026-03-11")).toBe(true);
+    expect(requests.find(request => request.method === "POST")?.body).toMatchObject({ filter: { property: "s%3A", status: { equals: "PuBlIcAdO" } } });
+    expect([published, draft]).toEqual(originalPages);
   });
   it("pagina páginas y bloques anidados en orden", async () => {
     const m = mock();
@@ -231,6 +266,33 @@ describe("Diagnóstico seguro de Notion", () => {
     const m = mock(); m.dataSources.retrieve.mockRejectedValue(apiError("unauthorized", 401));
     await diagnostic(() => collectTheory(client(m), sourceId));
     expect(m.databases.retrieve).not.toHaveBeenCalled();
+  });
+  it("explica el 404 de ambos tipos de recurso sin afirmar una causa ni imprimir IDs", async () => {
+    const m = mock();
+    const privateError = { ...apiError("object_not_found", 404), message: `${privateText} ${sourceId} ${pageId}` };
+    m.dataSources.retrieve.mockRejectedValue(privateError);
+    m.databases.retrieve.mockRejectedValue(privateError);
+    const result = await diagnostic(() => collectTheory(client(m), sourceId));
+    expect(result).toContain("no pudo leerse como fuente de datos ni como base contenedora");
+    expect(result).toContain("un 404 no confirma");
+    for (const hint of ["Copy data source ID", "NOTION_THEORY_SOURCE_ID", "Agregar conexiones", "Read content", "vista enlazada", "eliminada o reemplazada"])
+      expect(result).toContain(hint);
+    for (const id of [sourceId, pageId, sourceId.replaceAll("-", ""), pageId.replaceAll("-", "")])
+      expect(result).not.toContain(id);
+    expect(m.dataSources.query).not.toHaveBeenCalled();
+    expect(m.blocks.children.list).not.toHaveBeenCalled();
+  });
+  it("distingue una base accesible cuya fuente hija no se puede leer", async () => {
+    const m = mock(), databaseId = "33333333-3333-3333-3333-333333333333";
+    m.dataSources.retrieve.mockRejectedValue(apiError("object_not_found", 404));
+    m.databases.retrieve.mockResolvedValue({ data_sources: [{ id: sourceId }] });
+    const result = await diagnostic(() => collectTheory(client(m), databaseId));
+    expect(result).toContain("base contenedora accesible");
+    expect(result).toContain("falló su lectura");
+    expect(result).not.toContain("no pudo leerse como fuente de datos ni como base contenedora");
+    expect(result).not.toContain(databaseId);
+    expect(result).not.toContain(sourceId);
+    expect(m.dataSources.query).not.toHaveBeenCalled();
   });
   it("detecta configuraciones ausentes, IDs inválidos y bases ambiguas", async () => {
     for (const token of [undefined, "", "  "]) {

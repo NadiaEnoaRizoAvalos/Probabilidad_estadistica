@@ -8,11 +8,12 @@ import type { RichText, TheoryBlock, TheoryData } from "../src/types/theory.ts";
 
 type Raw = Record<string, unknown>;
 type Stage = "configuración" | "fuente" | "propiedad Estado" | "consulta de páginas" | "bloques" | "imágenes" | "validación" | "archivos locales";
+export const notionVersion = "2026-03-11";
 const reasons = {
   TOKEN_MISSING: "Falta el secreto NOTION_TOKEN en GitHub Actions. Configuralo en Secrets, con acceso a este repositorio.",
   SOURCE_MISSING: "Falta la variable NOTION_THEORY_SOURCE_ID en GitHub Actions. Configurala en Variables, no en Secrets.",
   SOURCE_ID_INVALID: "NOTION_THEORY_SOURCE_ID debe ser el ID de una data source o base de datos: 32 caracteres hexadecimales, con o sin guiones. No uses una URL ni el ID de una vista o página.",
-  SOURCE_AMBIGUOUS: "La base no contiene exactamente una data source. Configurá el ID de la data source autorizada.",
+  SOURCE_AMBIGUOUS: "El ID corresponde a una base contenedora, pero no contiene exactamente una data source. No se elegirá una fuente automáticamente. En la base original, abrí Administrar fuentes de datos (Manage data sources), elegí la fuente de tus unidades y usá Copiar ID de fuente de datos (Copy data source ID) para configurar NOTION_THEORY_SOURCE_ID.",
   STATE_MISSING: "No existe la propiedad Estado en la fuente autorizada. Revisá el nombre exacto y que el ID apunte a la base correcta.",
   STATE_TYPE: "La propiedad Estado debe ser de tipo Status o Select; el tipo actual es incompatible.",
   STATE_INCOMPLETE: "La API devolvió una propiedad Estado incompleta o incompatible; no se exportaron páginas.",
@@ -36,6 +37,7 @@ class SyncFailure extends Error {
   reason?: keyof typeof reasons;
   blockType?: string;
   counts?: { pages: number; published: number };
+  sourceLookup?: "configured-id" | "database-child";
   constructor(stage: Stage, reason?: keyof typeof reasons, cause?: unknown) {
     super(reason ? reasons[reason] : "Falló la sincronización", { cause });
     this.stage = stage;
@@ -64,12 +66,19 @@ export function diagnoseSyncError(error: unknown): string {
   if (!failure.reason) {
     if (code === "unauthorized" || status === 401) detail = "[AUTHENTICATION] Notion rechazó la autenticación. Revisá que NOTION_TOKEN esté vigente y corresponda a la integración autorizada.";
     else if (code === "restricted_resource" || status === 403) detail = "[PERMISSIONS] Notion denegó el acceso. Revisá la conexión de la integración con la base, la capacidad de leer contenido y los límites del espacio de trabajo.";
-    else if (code === "object_not_found" || status === 404) detail = "[NOT_FOUND_OR_UNSHARED] El recurso no existe o no está compartido con la integración. Notion no distingue estos casos: verificá el ID de la fuente y autorizá la conexión sobre la base original.";
+    else if (code === "object_not_found" || status === 404) {
+      detail = "[NOT_FOUND_OR_UNSHARED] El recurso no existe o no está compartido con la integración. Notion no distingue estos casos; un 404 no confirma que el ID sea incorrecto ni que la fuente haya sido eliminada.";
+      if (failure.stage === "fuente") {
+        if (failure.sourceLookup === "configured-id") detail += " El ID configurado no pudo leerse como fuente de datos ni como base contenedora.";
+        if (failure.sourceLookup === "database-child") detail += " El ID configurado corresponde a una base contenedora accesible; se encontró una única fuente, pero falló su lectura.";
+        detail += " Revisá en este orden: 1) En la base original, abrí Administrar fuentes de datos (Manage data sources), menú de la fuente de tus unidades, Copiar ID de fuente de datos (Copy data source ID). 2) Guardá ese ID en GitHub Actions > Variables > NOTION_THEORY_SOURCE_ID: no uses el nombre, una URL ni el ID de una vista o de una unidad. Un ID de base solo se resuelve si contiene una única fuente accesible. 3) En la base original, menú Conexiones > Agregar conexiones, autorizá la misma conexión cuyo token está en NOTION_TOKEN; verificá el espacio de trabajo y la capacidad Leer contenido (Read content). Si la galería es una vista enlazada, compartí la base original. 4) Si la fuente fue eliminada o reemplazada, copiá el ID de la fuente vigente y actualizá únicamente la variable. No publiques el token ni los IDs en los logs.";
+      }
+    }
     else if (code === "rate_limited" || status === 429) detail = "[API_RATE_LIMIT] Notion limitó las consultas tras los reintentos del SDK. Esperá y volvé a ejecutar.";
     else if (status !== undefined && status >= 500) detail = "[NOTION_API] Notion devolvió un error de servicio. Volvé a ejecutar más tarde.";
     else if (code === "notionhq_client_request_timeout" || code === "ETIMEDOUT") detail = "[API_TIMEOUT] La consulta a Notion agotó el tiempo de espera. Volvé a ejecutar.";
     else if (code && ["ENOTFOUND", "ECONNRESET", "ECONNREFUSED"].includes(code)) detail = "[API_CONNECTION] Falló la conexión con Notion. Volvé a ejecutar y revisá su disponibilidad.";
-    else if (code || status !== undefined) detail = "[NOTION_API] Notion rechazó la consulta. Revisá la fuente, su esquema y la compatibilidad con la API 2026-03-11.";
+    else if (code || status !== undefined) detail = `[NOTION_API] Notion rechazó la consulta. Revisá la fuente, su esquema y la compatibilidad con la API ${notionVersion}.`;
     else if (failure.stage === "bloques") detail = "[BLOCK_INVALID] No se pudieron leer o convertir los bloques completos de una página.";
     else if (failure.stage === "imágenes") detail = "[IMAGE_DOWNLOAD] Falló la lectura de una imagen; revisá acceso, formato, tamaño y vigencia del enlace.";
     else if (failure.stage === "archivos locales") detail = "[LOCAL_FILES] No se pudieron escribir o retirar los archivos locales. No publiques los cambios de esta ejecución.";
@@ -154,11 +163,23 @@ export async function collectTheory(notion: Client, sourceId: string, fetcher: t
     try { source = obj(await notion.dataSources.retrieve({ data_source_id: sourceId })); }
     catch (error) {
       if (!error || typeof error !== "object" || !("code" in error) || error.code !== "object_not_found") throw error;
-      const database = obj(await notion.databases.retrieve({ database_id: sourceId }));
+      // Only inspect the configured ID; never search other libraries by title.
+      let database: Raw;
+      try { database = obj(await notion.databases.retrieve({ database_id: sourceId })); }
+      catch (cause) {
+        const failure = new SyncFailure("fuente", undefined, cause);
+        failure.sourceLookup = "configured-id";
+        throw failure;
+      }
       const sources = list(database.data_sources);
       if (sources.length !== 1) throw new SyncFailure("fuente", "SOURCE_AMBIGUOUS");
       sourceId = str(obj(sources[0]).id);
-      source = obj(await notion.dataSources.retrieve({ data_source_id: sourceId }));
+      try { source = obj(await notion.dataSources.retrieve({ data_source_id: sourceId })); }
+      catch (cause) {
+        const failure = new SyncFailure("fuente", undefined, cause);
+        failure.sourceLookup = "database-child";
+        throw failure;
+      }
     }
     return source;
   });
@@ -309,7 +330,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   try {
     const token = process.env.NOTION_TOKEN, source = process.env.NOTION_THEORY_SOURCE_ID;
     checkConfiguration(token, source);
-    const result = await syncTheory(new Client({ auth: token, notionVersion: "2026-03-11", logLevel: LogLevel.ERROR, logger: () => { } }), source ?? "");
+    const result = await syncTheory(new Client({ auth: token, notionVersion, logLevel: LogLevel.ERROR, logger: () => { } }), source ?? "");
     const message = `Sincronización completada: ${result.published} páginas publicadas. ${result.changed ? "Teoría actualizada." : "Sin cambios."}${result.withdrawn ? " Se verificó que todos los documentos previos dejaron de estar publicados en la misma fuente." : ""}`;
     process.stdout.write(`${message}\n`);
     if (process.env.GITHUB_ACTIONS === "true" && process.env.GITHUB_STEP_SUMMARY) {

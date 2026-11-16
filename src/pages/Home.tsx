@@ -23,7 +23,7 @@ const modules = [
   {
     title: "Laboratorio de Estadística",
     description: "Un espacio para explorar datos, ejercicios y simuladores.",
-    image: "laboratory",
+    image: "histogram",
     path: "/laboratorio",
     note: "Conectá las ideas",
   },

@@ -11,7 +11,7 @@ export const assets = {
   resting,
   reading,
   theory,
-  laboratory: review,
+  laboratory: histogram,
   histogram,
   exams,
   review,

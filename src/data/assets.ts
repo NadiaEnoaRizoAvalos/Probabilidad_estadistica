@@ -1,5 +1,5 @@
-import resting from "../assets/01_conejito_descansando.png";
-import reading from "../assets/02_conejito_leyendo.png";
+import resting from "../assets/conejito-bienvenida.png";
+import reading from "../assets/conejito-estudiando.png";
 import theory from "../assets/03_libro_teoria.png";
 
 import exams from "../assets/06_parciales.png";

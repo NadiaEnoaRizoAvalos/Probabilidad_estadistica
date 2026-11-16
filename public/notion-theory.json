@@ -1,4 +1,1551 @@
 {
   "version": 1,
-  "documents": []
+  "documents": [
+    {
+      "id": "notion-ef41996d4e8f83bbb7ed8119baeef1db",
+      "title": "Unidad 2:",
+      "category": "General",
+      "cover": "notion-images/001ecb3379aaa8f007cf60151dc78516f70fe24da2b97ea30bd7cfbe608ae4e5.png",
+      "blocks": [
+        {
+          "id": "3f81996d-4e8f-8039-a4e9-f97f3c770f92",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "los fenomenos se pueden clasificar en deterministicos y aleatorios.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8056-9645-c38eb24f07e1",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Un fenomeno o experimento es ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "deterministico ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "cuando da lugar a un resultado cierto o seguro, es decir, cuando partiendo de unas mismas condiciones iniciales tenemos la certeza de lo que va a suceder por ejemplo, la altura desde la cual cae un objeto, lanzado siempre desde el mismo lugar.\nfenomeno deterministico: para cada accion tiene un resultado",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8004-bc20-fdcf285263fc",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Un fenomeno o experimento es ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "aleatorio",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": " cuando no se puede predecir el resultado es decir, aquel que bajo un mismo conjunto de condiciones fisicas controladas, no conduce siempre a un mismo resultado, por ejemplo, el lanzamiento de una moneda, de un dado, la extraccion de cartas de barajas de bolillas de bolilleros",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80f6-85e0-c60d5be787f7",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80ac-8a96-d7b70ab5ca22",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Espacio Muestral:\n es el conjunto de todos los resultados posibles de un fenomeno o experimento, se indica con la letra S y a los resultados se los expresa de forma conjuntista",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8009-a77b-db4527c06ab6",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/362bf83324a761365a94313d8b6c4a3a755969622f260ef4582e4fc650c86351.png"
+        },
+        {
+          "id": "3f81996d-4e8f-807d-898f-c537d06fdfe5",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80e2-8cbb-e3403fdc021b",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Sucesos o Eventos:\nes un subconjunto del espacio muestral, se indica con letras mayusculas A, B, C, etc.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-808f-8806-efee941a61aa",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/575bb96b2227bb84a33ec2855221be82b8aadb94bf1c221af3f618a32897afdc.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8050-af7e-fcff2689a980",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "los sucesos o eventos elementales son cada elemento del espacio muestral",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8092-a299-d5e05a0cd109",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80d8-ba83-f86c8559fafb",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "operaciones entre sucesos de conjuntos",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80a3-83c9-d61d65155d23",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "union de dos sucesos Ay B, (A U B) es una operacion cuyo resultado esta compuesto por todos los sucesos elementales no repetidos de los dos conjuntos que tienen en comun y no en comun",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-801a-b0da-f533aaf32d50",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80b2-922b-f4b79ed8787e",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "interseccion de dos sucesos A y B (A interseccion B) es una operacion cuyo resultado esta compuesto por los sucesos elementales no repetidos y comunes de los dos conjuntos",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8080-bd4c-f32177a233fa",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-802f-9ce9-e2b3672cf2d1",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "complemento de un suceso A : es el conjunto de resultado del espacio muestral que no estan incluidos en los resultados del evento A.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8054-8a90-c60aa5153659",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/8dafe164395d43c628e54a281baf767cef8ecbe16a6e65e65bef6417bd09404f.png"
+        },
+        {
+          "id": "3f81996d-4e8f-80d6-8da6-d43320370896",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "existe sucesos o ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "eventos mutuamente excluyentes",
+              "bold": true,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": " Dos sucesos A y B se denominan “mutuamente excluyente” cuando ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8052-9f9e-eb778e814247",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/b9b78c2a3e9b2008243f2b1542eb53259d1d7c7adf58973fb8e82085421a693d.png"
+        },
+        {
+          "id": "3f81996d-4e8f-80c4-8b1f-d55d084b0e87",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/5b870341a40c3beaeab153e9ba04ce1dd31d297ff585cca22dfad40461b151b0.png"
+        },
+        {
+          "id": "3f81996d-4e8f-800e-940b-ead07dba3ca5",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Sucesos o ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "eventos independientes",
+              "bold": true,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": " si lo que ocurre en uno de ellos no afecta de ninguna forma en el otro es decir se debe cumplir ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80fe-9a37-dcf33957b82c",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/52e54e5aac73bc565f342e8ec92eb98f7bb39a15fc259579c7c6f2b2bcb826ca.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8024-9d32-f051300547eb",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-809f-8e95-e3af8852951b",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "definicion clasica de probabilidad",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nSea A un suceso preteneciente al espacio muestral S, donde cada elemento del espacio muestral tienen la msma probabilidad de ocurrir, se define la probabilidad que ocurre al suceso A como :",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8064-8829-f9335ac54f2b",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/2ce4415f42cf0541c31471cc2b8366ee1a170772413ed8652810434bb5673e7e.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8082-adab-de42ee3a05fc",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/9dbee85f83338113df81ed9cfcbfa9d31d593b0c1c49068c10d739bbbfd4c694.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8056-be2f-d6055100d22b",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "definicion axiomatica de probabilidad:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nsea e=experimento aleatorio y sea S=Espacio muestral y sean A y B dos sucesos que pertenecen a S. se define la probabilidad de un suceso como un numero real que satisface los siguientes axiomas ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80b9-9a10-f3a723e74eba",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/4bdf3978e0ba5fe4b24980840ec4eebcda8d42ba296494a5752c827b7254ae40.png"
+        },
+        {
+          "id": "3f81996d-4e8f-802d-810f-c15d9d271ddf",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/0c917b4a0b73f37d3750d1e00f9cd4fabffeeb9a45af91889774fe6a583c07f7.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8075-9b5d-caa995156720",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/4de1eaaf2d6f7e7238d7762b89ea9c24aa1faa2c4d3c95cc6f67663ab8382e8a.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8026-a714-c5b524175c6d",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80d1-a9bd-d4bd7a2d7984",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "el principio de multiplicacion:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": " establece que si un suceso se puede realizar de m formas diferentes y luego se puede realizar otro suceso de n formas diferentes, el numero total de formas en que pueden ocurrir es igual a mxn",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-8042-b489-cd40b0716522",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/05979ddbfb83399e5a63eb49d23861a264b168bbf2df853dab173db07f45db7e.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8003-bba5-cb4cf03779c2",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/ebb46efe45ed1467d70fda9d1f19ced5043c90f9a9325e1eb853d41a5f86fb75.png"
+        },
+        {
+          "id": "3f81996d-4e8f-80e7-820b-cbc4a7282eb2",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-803b-ad4e-e97dd2d307e4",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Practica",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f81996d-4e8f-80a8-b3d7-d2d41383ce83",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/bf7e4017c3b25df68312e46ee7fc4831d74fa67759211a157f96626b4fea2bc6.png"
+        },
+        {
+          "id": "3f81996d-4e8f-8000-b85f-ea1ef1c87536",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "notion-f371996d4e8f83aa92cf81a37777064c",
+      "title": "Unidad 1:",
+      "category": "General",
+      "cover": "notion-images/f648cb1702b685dfba0db8e043c65f8bcb59f943b77c4ea7fe676e32cd3f3b0e.png",
+      "blocks": [
+        {
+          "id": "3f41996d-4e8f-8018-9e89-e7a92d4e9f48",
+          "type": "heading_2",
+          "text": [
+            {
+              "text": "ESTADISTICA DESCRIPTIVA",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80fb-9900-d3e904c5f392",
+          "type": "heading_3",
+          "text": [
+            {
+              "text": "DISTRIBUCION DE FRECUENCIA",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-805d-8f87-e8149694b91a",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "La estadistica: ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nes una rama cientifica que se ocupa de la obtencion , orden y analisi de un conjunto de datos con el fin de obtener explicaciones y predicciones sobre fenomenos observados, su metodologia es aplicable al estudios de diversas diciplinas, y ayuda a obtener conclusiones relevantes para el estudio de todo tipo de agentes como: humanos, animales, plantas, etc.\nGeneralmente lo hace a traves de muestras estadisticas\n\nse toma datos de lo q ami me interesa estudiar, de los arrregla de los ordena y una vez ordenado se usan diferentes metodologias para estudiarlos, y en base a eso se saca conclusiones.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80a1-a03a-c1538512639a",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-801e-a87c-f73354859d20",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Estadistica Descriptiva: ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": true,
+              "code": false
+            },
+            {
+              "text": "\nse refiere a los metodos de recoleccion, organizacion, resumen y presentacion de un conjunto de datos. Se trata principalmente de describir las caracteristicas fundamentales de los datos y para ellos se suelen utilizar graficos y tablas; por ejemplo, la edad de una publacion, altura de los estudiantes de una escuela, etc\n\nse toma los datos se los organiza en tablas y graficos y en sabe a eso da informacion\n",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-804a-9cb7-d2e8e09a2fa5",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Estadistica  inferencial: \n",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": true,
+              "code": false
+            },
+            {
+              "text": "se refiere a los metodos utilizados para poder hacer predicciones, generalizaciones y obtener conclusiones a partir de los datos analizados teniendo en cuenta el grado de incertidumbre existente. trabaja con muestras a partir de las cuales obtiene conclusiones sobre la poblacion.\n\na partir de un grupo chico le va bien se acepta la solucion",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80ae-ad31-cd76a8966565",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8058-b15b-d3490d87ac94",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Variables Estadisticas:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nEs el conjunto de los distintos valores numericos que adopta un caracter cuantitativo pueden ser de dos tipo:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-806a-95a1-e48cfcf60527",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "variable cualitativa: no se pueden medir numericamente(nacilonalidad, color de piel, sexo)",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8018-991a-c492497b0c9e",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "variable cuantitativa: tienen valor numerico (edad, precio de un producto, ingresos anuales).",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80b7-baf7-efeea9e279c6",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Individuo:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nCualquier elemento que porte informacion sobre el fenomeno que se estudia. por ejemplo: si se estudia la altura de los niños de una clase, cada alumno es un individuo; si se estudia el precio de la vivienda, cada alumno es un individuo, etc",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8069-8386-c9ed6f7aede8",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Poblacion:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nConjunto de todos los individuos, que aporten informacion sobre el fenomeno que se estudia, por ejemplo si se estudia el precio de una vivienda en ua ciudad la poblacion sera el total de las viviendas de dicha ciudad",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8023-b8eb-f5e4aedd6ee7",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Datos estadisticos:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": " \nson medidas y/o numeros recopilados a partir de la observacion. se pueden clasificar en ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8021-bd79-f66e18c10e53",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "datos discretos: son respuestas numericas que surgen de un proceso de conteo.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8045-b932-d4b640b44084",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "datos continuo: son respuestas numericas que surgen de un proceso de medicion",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80e0-8190-c0981b240240",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "Organizacion y representacion de datos:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            },
+            {
+              "text": "\nmuchas veces uno se pregunta ¿para que sirven las encuentas?,¿como saber si una estacion de radio se escucha mas que otra?, ¿Cual candidato puede ganar? la respuesta comienza con la recopilacion de datos\nlos datos son informacion que se recoge esto pueden ser, opiniones de las persona o sobre un tema, edad sexo de encuentados, donde vivem, cuantas personas viven en una casa que tipo de sangre tienen un grupo de persona, etc.\nuna vez que se ha recogido la informacion se procede a crear una base de datos, donde se regstran todos los datos obtenidos ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80c5-a52e-f29903df6dca",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Frecuencia absoluta: la cantidad de veces que se repide cada dato.",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-801a-b1d0-e478706ca6f0",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Frecuencia acumulada: la acumulacion del valor hacia atras",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-805d-b0d4-ec912b55d88d",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Frecuencia relativa: representra una cantidad con respecto al total",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8006-9548-ce42b5a74a91",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "Frecuencia Acumulada Relativa: se basa en lo mismo sobre el total ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8048-a02d-eeffb9ecd8f7",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "graficos de barra, eje de las x  cada muestras osea del 1 al 9 por ejemplo  y en el eje de las y la frecuencia,  en frecuencia absoluta el grafico de barra es enteera la barrita, y en fracuencia acumulada solo se pone el tope no se dibuja la barra ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8056-baef-eb4bed4a129b",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/d85f89c878f62426f5e2795bfc87c765b0449944526953e08d4d3ace5780c8f4.png"
+        },
+        {
+          "id": "3f41996d-4e8f-80d4-819d-d0a39b0605c9",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "\ndatos continuo, nosotros sacamos el rango que es la longitud de los datos ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8095-9d7e-dba09c9f0600",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/f30692dd35f353c952ccb0f2d184d2fbdbd69bcbe451235060d765cb649fb241.png"
+        },
+        {
+          "id": "3f41996d-4e8f-8075-ac51-f08db49c4ab8",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y despues para sacar el intervalo de confinanza para determinar la tablita se hace de dos manera haciendo una tabla o haciendo una formula llamada la regla de sturges",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80e3-bfe9-f7dbdf49e417",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/00cb1ec138ea11427dab1659196cdaad043bbe9ba5f984199796b130ec686574.png"
+        },
+        {
+          "id": "3f41996d-4e8f-804a-ba62-d4dcdc229db2",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "\ndespues se calcula la amplitud que es cuando ya tenemos el rango de long de los datos, sobre el k  la regla de sturges, esto es para determinar la longitud de los datos ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8010-b7fc-d5e82a841979",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/374d2a51fd0530d88bf4631a05e3ae304a3763412a87cdbe778eeae6b6e26931.png"
+        },
+        {
+          "id": "3f41996d-4e8f-8036-94bb-d70d9df216af",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "la marca de clase es el punto medio del intervalo [n1 - n2) = (n1+n2)/2",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8052-b668-f1cc3e75bb88",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y en base a esta tabla se grafica las frecuencias con un histograma con cuadrados cerrados\n",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80af-a84e-d1247c417c36",
+          "type": "column_list",
+          "text": [],
+          "children": [
+            {
+              "id": "3f41996d-4e8f-8045-a73c-e2be693ad709",
+              "type": "column",
+              "text": [],
+              "children": [
+                {
+                  "id": "3f41996d-4e8f-80b5-a3c5-dc48be38b080",
+                  "type": "image",
+                  "text": [],
+                  "children": [],
+                  "src": "notion-images/3ead9efd52c7ae81f8c5804128376c008350ba75e2610bdb2ebe4f826818abc6.png"
+                }
+              ]
+            },
+            {
+              "id": "3f41996d-4e8f-8046-8b64-fdb339d58eed",
+              "type": "column",
+              "text": [],
+              "children": [
+                {
+                  "id": "3f41996d-4e8f-80a0-86c8-eec5949c5af4",
+                  "type": "image",
+                  "text": [],
+                  "children": [],
+                  "src": "notion-images/c0c9843abd89305f6b840a6f4261265a3987f19763f88b78fce61bfda48b1787.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3f41996d-4e8f-8011-be49-de724b61c4cf",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-80e3-9bd3-c5a0d45de031",
+          "type": "heading_3",
+          "text": [
+            {
+              "text": "MEDIDA DE CENTRALIZACION Y DISPERSION",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f41996d-4e8f-8003-bbee-d7bb722d1375",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "dan un valor central de la distribucion de frecuencias, siendo un valor que se puede tomar como representativo de todos los datos. hay diferentes modos  para definir el “centro” de las observaciones en un conjunto de datos.algunas de las medidas son:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80e9-84fe-cac0d62c175b",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "media",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": true,
+              "code": false
+            },
+            {
+              "text": ": es la medida de posicion mas frecuentemente usasda. se usa para datos numericos, podemos imaginar a los datos como un sistema fisico, en el que cada dato tiene una masa unitaria y lo ubicamos sobre una barra en la posicion correspondiente a su valor. la media representa la posicion en que se deberia ubicar el punto de apoyo para que el sistema este en equilibrio, la suma de las ditancias de los datos a la media es cero. esta propidad esta relacionada con el hecho que la media es el centro de gravedad de los datos es muy sensible a la presencia de datos atipicos(tenemos un conjunto de datos y un dato q esta alejado del conjunto de datos, eso significa q es atipico ). es este caso la media no es una buena medida de posicion de los datos. se calcula como ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80d0-bf90-e899a4e553e5",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/c19f9360e4bd941dbfa25b38d1e22d85d386a77a9ff20add157e0a10c91747c7.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8087-ad75-fe8daafdb55f",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y la suma de la distancias a la media es cero ejemplo:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8096-b636-df4187d1ea02",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/17071b28427cfd87fd535c041a05580b7a34c8ed3b5ba29740917943bff674e0.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8072-b2a1-c6e6c40f0e49",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y en datos agrupados:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-800b-ac32-f710a60d4bb2",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "la media se calcula reemplazando xi por la marca de clase mi, entonces: ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80a5-bb57-f538d4b25ed5",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/ab171a1833ca49a31630f4f170d7755469b6dfc624449f9d2e425564fedf2669.png"
+        },
+        {
+          "id": "3f71996d-4e8f-801e-b38f-f41301b66445",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/88fc1a3c49e6aeeb45312fd8846c7327c3764836e00813fb19af66b4b4c0e7bd.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8023-bf1b-db42e053fcdb",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "sumar la marca de clases por su frecuencia ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8007-8bf7-d4cc80944e27",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y en la grafica se ve asi la media tanto de datos no agrupados como de agrupados",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80f8-ad64-fd2b267461cf",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/31f86cf0f9bffac0a5041eeab04ab5de10359d77b7e9ef388f417434cee16c19.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8055-981d-c74f7df1a0e7",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "no es el centro de la informacion sino es el equilibrio de los datos ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80d1-9006-cbabcc56dca7",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "mediana:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80f4-9300-e7f015e6c22b",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "si es el centro de los datos o de la informacion,  seria es el dato que ocupa la posicion central en la muestra ordenada de menor a mayor. se puede hallar solo para variables cuantitativas(o numericos).",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8087-862a-cbe71aae3498",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "se ordenad los datos de menor a mayor",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8076-b565-db5e20ed6192",
+          "type": "bulleted_list_item",
+          "text": [
+            {
+              "text": "la mediana es el dato que ocupa la posicion (n+1)/2 en la lista ordenada",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8029-8130-c337109f073e",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "       -si el numero de datos es impar la media (me) es el dato que ocupa la posicion cental es decir ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8000-88b0-ed09602309d6",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/56a1ef6a2899557b893726c946a76dce9d55e351c4df2d7c44033a5292ca60b6.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80b7-b588-f3deb39a3c85",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "      -si el numero de datos es par la mediana(me) es el promedio de los datos centrales ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80bf-8a01-f8fb015ec13f",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": " ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8035-a8a5-f72aec934525",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/5faf18e1819078ad0f9a928c64ea7df8bc56ca8aae1bec40241396cc6429e1ba.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80e6-bc1b-e2e5e0573a47",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80f0-b870-e3fbb831ce67",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/4392bd610fe40c4c707ce88786abc15f1410ff0d44b717870f1e96247ec6d6c4.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80f4-9d76-dfa4ea7ea843",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y para datos agrupados: la mediana se encuentra en el intervalo donde la frecuencia acumulada llega hasta la mitad de la suma de las frecuencias absolutas, es decir se tiene que buscar el intervalo en el que se encuentre n/2 Ademas se puede cacular con la siguiente formula:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8003-91e0-d30e730220f7",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/72af23c265aec62194e71680a00333f8543f9f32cd5dd9dced4ee763cc32f3f4.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8030-8ce9-d2405172fcfa",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/9b9bb32d968cde36387ec47de5d239fb568c533c2dcc4382a1bbbced79582655.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80f2-a9fb-d52af3d0c56b",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/158b556a401be229e3e3a4ae162f90b0225698e6e198183d73075eb0bd49dc15.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80e6-973c-d01a58fc5316",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8084-8fbf-c4440cebe971",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "moda:",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8052-a7db-d07167db8bbe",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "la moda (Mo) es el valor de la variable que mas veces se repite es decir no necesariamente es un unico valor",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80e7-8688-edf30b93d12a",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/6cd7fe190d868725d99df1b19a179c0c1da55948d8fb7bdf6ba50800efe5b86e.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80b7-9ee9-f6fc9f546aa3",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "y la moda de datos agrupados, se encuentra en el intervalo de clase que contiene la mayor frecuencia absoluta de los datos se calcula como :",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8006-a897-edd9b60cf38e",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/abaaa4938445d47d20f43d2f11be10db1e1faac30cfb00d372d826e50b93f6cf.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80b6-ab87-d7fd2a5deea3",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/43c3528689380f5bf182246dee2aa59e50c4f1e03cd7464e5158a375c5608a64.png"
+        },
+        {
+          "id": "3f71996d-4e8f-800e-9fba-d781e9360045",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-809a-8dde-e20d5ecc8e25",
+          "type": "heading_2",
+          "text": [
+            {
+              "text": "medida de dispersion",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80f6-8487-fa270b9d7081",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "la medidas de dispersion cuantifican la separacion, la variabilidad de los valores de distribucion respecto al valor central",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8028-b81f-d0cb881b63b0",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/525651290eca716ea824923df9a350100bb810f1ff754b463e6c6fbaf84c7e07.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80b3-a68a-ddd43b123cfa",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/1c5f1c0db62fbbe3709927fdd15f55fd7d3a8e085fb39f5526dc8053aa05c316.png"
+        },
+        {
+          "id": "3f71996d-4e8f-8091-871a-c6d43bd0b982",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/983b0bb80c29c78df8fdaa0614136670720c8df1fb4c89ce73cdc2bd80b17d50.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80dc-b990-d540693f6b1b",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80be-b92c-ca732603ac26",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80f5-a014-c0433db4fd36",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-8015-a29c-f3aa737b99f4",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "comentario",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f61996d-4e8f-8023-81dc-c0ed5b72c502",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "las primeras medidas de centralizacion nos dan un valor central q no siempre es valor central es mas representativo, la media es el promedio, no siempre es el centro de los datosmas q nada es el centro de gravedad de los datos, mediana es el centro de los datos, moda el valor que mas se repite ",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3f71996d-4e8f-80cb-a1d6-cec6429c3e4d",
+          "type": "image",
+          "text": [],
+          "children": [],
+          "src": "notion-images/5e1154f0ab9a017c1ad9174a5eb69dbacc46d001c49f27b7927c80ea197a5dbb.png"
+        },
+        {
+          "id": "3f71996d-4e8f-80c2-9574-c46333d47fa9",
+          "type": "paragraph",
+          "text": [
+            {
+              "text": "son las q mide cuanto los datos varian respecto a la media eso es una medida de dispercion",
+              "bold": false,
+              "italic": false,
+              "strike": false,
+              "underline": false,
+              "code": false
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
 }

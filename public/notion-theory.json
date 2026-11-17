@@ -8,6 +8,12 @@
       "cover": "notion-images/001ecb3379aaa8f007cf60151dc78516f70fe24da2b97ea30bd7cfbe608ae4e5.png",
       "blocks": [
         {
+          "id": "41a1996d-4e8f-80f5-ae65-c40607e083e3",
+          "type": "paragraph",
+          "text": [],
+          "children": []
+        },
+        {
           "id": "3f81996d-4e8f-8039-a4e9-f97f3c770f92",
           "type": "paragraph",
           "text": [
